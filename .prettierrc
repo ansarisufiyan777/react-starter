@@ -1,0 +1,16 @@
+trailingComma: es5
+printWidth: 80
+tabWidth: 2
+useTabs: true
+semi: false
+bracketSpacing: false
+jsxBracketSameLine: false
+parser: typescript
+singleQuote: true
+requirePragma: false
+overrides:
+- files: "*.css"
+  options:
+    parser: css
+    printWidth: 80
+
