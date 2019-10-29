@@ -5,4 +5,4 @@ export interface ILaodQuestion {
 	type: typeof LAOD_DATA
 	payload: any
 }
-export type IAppActionTypes = ILaodQuestion  // add more actions here pipe seperated
+export type IAppActionTypes = ILaodQuestion // add more actions here pipe seperated
