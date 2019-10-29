@@ -2,11 +2,13 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {loadQuestions} from '../store/actions'
 import '../styles/Main.scss'
-import Chat from './Chat'
+import ConentBody from './ContentBody'
 
 type IProps = {
 	loadQuestions: () => void
-	name: ''
+	body: ''
+	footer: ''
+	header: ''
 }
 
 type IState = {}
@@ -16,16 +18,12 @@ class Main extends React.Component<IProps, IState> {
 		this.props.loadQuestions()
 	}
 	render() {
-		const {name} = this.props
-
-		console.log('Hello questions', name)
+		const {header, footer} = this.props
 		return (
 			<div className="main">
-				<div className="header">{name}</div>
-				<Chat></Chat>
-				<div className="footer">
-					<input type="text" />
-				</div>
+				<div className="header">{header}</div>
+				<ConentBody></ConentBody>
+				<div className="footer">{footer}</div>
 			</div>
 		)
 	}
@@ -33,7 +31,9 @@ class Main extends React.Component<IProps, IState> {
 
 const mapStateToProps = (state: any, ownProps) => {
 	return {
-		name: state.state.collect.name,
+		body: state.state.data.body,
+		footer: state.state.data.footer,
+		header: state.state.data.header,
 		ownProps,
 	}
 }

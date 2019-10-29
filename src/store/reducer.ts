@@ -1,26 +1,20 @@
 import {
-	LAOD_QUESTION,
-	IAppActionTypes,
-	SET_CURRENT_QUESTION,
+	LAOD_DATA,
+	IAppActionTypes
 } from '../types/actions'
 const initialState = {
-	collect: {},
-	questions: [],
-	currentQuestion: {},
-	answeredQuestions: [],
+	data: {},
 }
 
 export const reducer = (
 	state = initialState,
-	{type, payload}: IAppActionTypes
+	{ type, payload }: IAppActionTypes
 ) => {
 	switch (type) {
-		case LAOD_QUESTION:
-			return {...state, loading: true}
-		case LAOD_QUESTION + '_RECEIVED':
-			return {...state, collect: payload.collect, loading: false}
-		case SET_CURRENT_QUESTION:
-			return {...state, currentQuestion: payload}
+		case LAOD_DATA:
+			return { ...state, loading: true }
+		case LAOD_DATA + '_RECEIVED':
+			return { ...state, data: payload, loading: false }
 		default:
 			return state
 	}

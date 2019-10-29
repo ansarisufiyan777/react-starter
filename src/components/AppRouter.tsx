@@ -1,7 +1,7 @@
 import React from 'react'
 import {Router, Route, Switch} from 'react-router-dom'
 import {createBrowserHistory} from 'history'
-import Chat from '../containers/Chat'
+import ConentBody from '../containers/ContentBody'
 import Main from '../containers/Main'
 
 export const history = createBrowserHistory()
